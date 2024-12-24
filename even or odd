@@ -1,0 +1,26 @@
+//to design a program that checks that the given number is a odd or even
+#include<stdio.h>		//header file
+
+//function declaration
+int evenodd(int num);
+
+//main function
+int main(){
+	int num;
+	printf("Enter the number:");
+	scanf("%d",&num);
+	int res=evenodd(num);		//funciton call by value
+	if (res==0)
+		printf("%d is even",num);
+	else
+		printf("%d is odd",num);
+}
+
+//function definition
+int evenodd(int num){
+	int temp;
+	if (num%2==0)
+		return temp=0;
+	return temp=1;
+}
+
