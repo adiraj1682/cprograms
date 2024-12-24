@@ -10,7 +10,7 @@ int main(){
 	//reading two numbers
 	printf("Enter two numbers:");
 	scanf("%d%d",&num1,&num2);	
-	//function calling 
+	//function calling (call by value)
 	int res=lcm(num1,num2);
 	printf("%d is the lcm of %d and %d",res,num1,num2);
 	return 0;
