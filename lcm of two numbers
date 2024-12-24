@@ -1,0 +1,29 @@
+//to design a program that finds lcm of two numbers 
+#include<stdio.h>
+
+//function declaration
+int lcm(int num1,int num2);
+
+//main function
+int main(){
+	int num1,num2;
+	//reading two numbers
+	printf("Enter two numbers:");
+	scanf("%d%d",&num1,&num2);	
+	//function calling 
+	int res=lcm(num1,num2);
+	printf("%d is the lcm of %d and %d",res,num1,num2);
+	return 0;
+}
+
+//function definition
+int lcm(int num1,int num2){
+	int i;
+	int prod=num1*num2;
+	for (i=1;i<=prod;i++){
+		if (i%num1==0 && i%num2==0){
+		return i;
+		break;}
+	}
+	return prod;
+}
