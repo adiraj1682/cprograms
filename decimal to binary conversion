@@ -1,0 +1,32 @@
+//to design a program that converts a decimal number into binary number
+#include<stdio.h>	//header file
+
+void decimal2binary(int num,int bits);	//function declaration
+
+//main function
+int main(){
+	int num;
+	printf("Enter decimal number:");
+	scanf("%d",&num);
+	int bits;
+	printf("Enter bit size:");
+	scanf("%d",&bits);
+	decimal2binary(num,bits);		//function call by value
+	return 0;
+}
+
+//function definition
+void decimal2binary(int num,int bits){
+	int arr[50];		//it will store the bits value
+	int i;
+	for (i=0;i<bits;i++){
+		int a=num%2;
+		arr[i]=a;
+		int b=num/2;
+		num=b;
+	}
+	printf("Binary number:");
+	for (i=bits-1;i>=0;i--){
+		printf("%d",arr[i]);
+	}
+}
