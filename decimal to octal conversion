@@ -1,0 +1,32 @@
+//to design a program that converts a decimal number into octalnumber
+#include<stdio.h>	//header file
+
+void decimal2octal(int num);	//function declaration
+
+//main function
+int main(){
+	int num;
+	printf("Enter decimal number:");
+	scanf("%d",&num);
+	decimal2octal(num);		//function call by value
+	return 0;
+}
+
+//function definition
+void decimal2octal(int num){
+	int arr[50];		//it will store the result
+	int i=0,count=0;
+	int a,b;
+	do{
+		a=num%8;
+		arr[i]=a;
+		i++;
+		b=num/8;
+		num=b;
+		count++;
+	}while(b!=0);
+	printf("Octal number:");
+	for (i=count-1;i>=0;i--){
+		printf("%d",arr[i]);
+	}
+}
