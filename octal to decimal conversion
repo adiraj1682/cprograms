@@ -1,0 +1,33 @@
+//to design a program that converts octal number into its decimal format
+#include<stdio.h>	
+#include<math.h>	//header files
+
+int octal2decimal(int octnum);		//function declaration
+//main function
+int main(){
+	int octnum,bits;
+	printf("Enter octal number:");
+	scanf("%d",&octnum);
+	int res=octal2decimal(octnum);		//function call by value
+	printf("%d in decimal:%d",octnum,res);
+	return 0;
+}
+//function definition
+ int octal2decimal(int octnum){
+	int a,b,i=0;
+	int sum=0;
+	do{
+		a=octnum%10;
+		if (a==0 || a==1){
+			sum=sum+a*pow(8,i);
+			i++;
+			b=octnum/10;
+			octnum=b;
+		}
+		else {
+			break;
+			return 0;
+		}
+	}while (b!=0);
+	return sum;
+}
