@@ -18,16 +18,13 @@ int main(){
 	int sum=0;
 	do{
 		a=octnum%10;
-		if (a==0 || a==1){
-			sum=sum+a*pow(8,i);
-			i++;
-			b=octnum/10;
-			octnum=b;
+		if (a==8 || a==9){
+			return -1;
 		}
-		else {
-			break;
-			return 0;
-		}
+		sum=sum+a*pow(8,i);
+		i++;
+		b=octnum/10;
+		octnum=b;
 	}while (b!=0);
 	return sum;
 }
