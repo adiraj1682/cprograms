@@ -1,0 +1,33 @@
+//to design a program that converts binary number into its decimal format
+#include<stdio.h>	
+#include<math.h>	//header files
+
+int binary2decimal(int binum);		//function declaration
+//main function
+int main(){
+	int binum,bits;
+	printf("Enter binary number:");
+	scanf("%d",&binum);
+	int res=binary2decimal(binum);		//function call by value
+	printf("%d in deicmal:%d",binum,res);
+	return 0;
+}
+//function definition
+ int binary2decimal(int binum){
+	int a,b,i=0;
+	int sum=0;
+	do{
+		a=binum%10;
+		if (a==0 || a==1){
+			sum=sum+a*pow(2,i);
+			i++;
+			b=binum/10;
+			binum=b;
+		}
+		else {
+			break;
+			return 0;
+		}
+	}while (b!=0);
+	return sum;
+}
