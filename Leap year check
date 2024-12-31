@@ -1,0 +1,31 @@
+//to design a program that checks that the entered year is a leap year or not
+#include<iostream>		//header file
+using namespace std;
+int leapyearcheck(int year);		//function declaration
+
+//main function
+int main(){
+	int year;
+	cout<<"Enter year:";
+	cin>>year;
+	int check=leapyearcheck(year);		//function call 
+	if (check==1)
+		cout<<year<<" is a leap year";
+	else
+		cout<<year<<" is not a leap year";
+	return 0;
+}
+
+//function definition
+int leapyearcheck(int year){
+	int flag;
+	if (year%100==0){
+		if (year%400==0)
+			flag=1;
+	}
+	else if (year%4==0)
+		flag=1;
+	else
+		flag=0;
+	return flag;
+}
