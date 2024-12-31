@@ -1,0 +1,10 @@
+//to design a program that prints a to z and A to Z using for loop
+#include<stdio.h>
+int main(){
+	int i,j;
+	printf("English Alphabets:");
+	for (i=97,j=65;i<=122,j<=90;i++,j++){
+		printf("%c,%c\t",i,j);
+	}
+	return 0;
+}
