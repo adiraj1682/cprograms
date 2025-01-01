@@ -1,0 +1,27 @@
+//to design a program that prints prime number
+#include<stdio.h>		//header files
+
+void printPrime(int lterm);		//function declaration
+
+int main(){
+	int lterm;
+	printf("Enter last term:");
+	scanf("%d",&lterm);
+	printPrime(lterm);		//function call
+	return 0;
+}
+
+void printPrime(int lterm){
+	int i,j;
+	printf("Prime Numbers:");
+	for (i=2;i<=lterm;i++){
+	int count=0;
+		for (j=1;j<=i;j++){
+			if (i%j==0){
+				count++;
+			}
+		}
+		if (count<=2)
+			printf("%d\t",i);
+	}
+}
