@@ -1,0 +1,55 @@
+//to design a program that finds the swaps first and last digit of a number
+#include<stdio.h>
+#include<math.h>
+//function declaration
+int swap(int num);
+int firstdig(int num);
+int lastdig(int num);
+int digcount(int num);
+
+//main function
+int main(){
+	int num;
+	printf("Enter number:");
+	scanf("%d",&num);
+	int res=swap(num);		//function call
+	printf("New Number:%d",res);
+	return 0;
+}
+
+//function definitions
+
+int digcount(int num){
+	int count=0;
+	int a,b;
+	do{
+		a=num%10;
+		count++;
+		b=num/10;
+		num=b;	
+	}while (b!=0);
+	return count;
+}
+
+
+int firstdig(int num){		//function to find first digit
+	int temp;
+	while (num!=0){
+		int a=num%10;
+		temp=a;
+		int b=num/10;
+		num=b;
+	}
+	return temp;
+}
+
+int lastdig(int num){		//function to find last digit
+	return num%10;
+}
+
+int swap(int num){		//function to swap first and last digits
+	int count=digcount(num);
+	int num1=num-firstdig(num)*pow(10,count-1)-lastdig(num);
+	int newnum=num1+lastdig(num)*pow(10,count-1)+firstdig(num);
+	return newnum;
+}
